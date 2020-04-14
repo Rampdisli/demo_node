@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'node app.js'
+                timeout(time: 1, unit: 'MINUTES') {
+                    sh 'node app.js'
+                }
             }
         }
     }
