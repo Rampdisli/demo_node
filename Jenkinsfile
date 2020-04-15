@@ -15,11 +15,5 @@ pipeline {
       }
     }
 
-    stage('') {
-      steps {
-        cifsPublisher()
-      }
-    }
-
   }
 }
