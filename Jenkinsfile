@@ -8,11 +8,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                    sh 'node app.js &'
-                    sh 'sleep 1'
-                    sh 'echo $! > .pidfile'
-                    input message: 'Finished using the web site? (Click "Proceed" to continue)'
-                    sh 'kill $(cat .pidfile)'
+                    sh 'node app.js'
             }
         }
     }
