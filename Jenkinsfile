@@ -1,5 +1,12 @@
 pipeline {
     agent { dockerfile true }
+    stages {
+        stage('build') {
+            steps {
+                    sh 'docker build -t demo_node .'
+            }
+        }
+    }
     post {
         success {
             sh 'docker rm -f demo_node || true'
